@@ -49,9 +49,11 @@ export const Home = () => {
             // const getIdsFromLocal = localStorage.getItem('nominations') && localStorage.getItem('nominations').split(',');
             const isDisabled = foo && foo.length > 0 ? foo.includes(id) : false;
 
-            return <div key={index}>
-                <div>{item.Title}</div>
-                <div>{item.Year}</div>
+            return <div className='movie-tile' key={index}>
+                <div class="movie-details">
+                    <div className='movie-title'>{item.Title}</div>
+                    <div className='movie-year'>({item.Year})</div>
+                </div>
                 <button className="nominate-me" onClick={(e) => nominateMe(e, item)} disabled={isDisabled}>Nominate</button>
             </div>
         })
@@ -107,16 +109,31 @@ export const Home = () => {
         });
     }
 
-    return <div>
+    return <div className='content-container'>
         <input 
+            className='input-movie'
             placeholder='Enter Movie Name'
             val={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={doSomething}
              />
-        <div>{searchResults.length > 0 ? tilesContainer() : null}</div>
-        {prev && currentPage !== 1 && <button onClick={prevResults}>Previous</button>}
-        {next && <button onClick={nextResults}>Next</button>}
-        <div>{(active && foo.length > 0) ? nominatedContainer() : null}</div>
+        <div className="one">
+            <div className="one_1">
+                <div>
+                    <div className="search-results-title">
+                        <span className="search-for">Search results for: </span>
+                        <span className="result">{inputVal}</span>
+                    </div>
+                    {searchResults.length > 0 ? tilesContainer() : null}
+                </div>
+                <div className="buttons-container">
+                    {prev && currentPage !== 1 && <button class="prev" onClick={prevResults}>Previous</button>}
+                    {next && <button class="next" onClick={nextResults}>Next</button>}
+                </div>
+            </div>
+            <div className='one_2'>
+                <div>{(active && foo.length > 0) ? nominatedContainer() : null}</div>
+            </div>
+        </div>
     </div>
 }

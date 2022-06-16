@@ -5,21 +5,17 @@ import { Home } from './Home';
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <header className='header'>
+        <div class="app-title-container">
+          <a class="title" href="/">OMDB</a>
+        </div>
+      </header>
       <Home />
+      {/* <footer class="footer">
+        <div class="app-footer-container">
+          <a class="footer-link" href="/">OMDB - End of Page</a>
+        </div>
+      </footer> */}
     </div>
   );
 }
