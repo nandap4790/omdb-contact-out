@@ -1,21 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import { Home } from './Home';
+
+import Home from './Home';
+import { Header } from './Home/Header';
+import SearchInput from './Home/SearchInput';
+
 
 function App() {
   return (
     <div className="App">
-      <header className='header'>
-        <div class="app-title-container">
-          <a class="title" href="/">OMDB</a>
-        </div>
-      </header>
+      <Header />
+      <div className="content-container">
+        <SearchInput />
+      </div>
       <Home />
-      {/* <footer class="footer">
-        <div class="app-footer-container">
-          <a class="footer-link" href="/">OMDB - End of Page</a>
-        </div>
-      </footer> */}
     </div>
   );
 }
