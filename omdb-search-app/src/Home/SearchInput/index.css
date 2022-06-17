@@ -1,0 +1,10 @@
+.movie-name-input {
+  font-weight: bold;
+}
+
+.input-movie {
+	margin: 24px;
+	width: 768px;
+	max-width: 320px;
+	padding: 10px;
+}

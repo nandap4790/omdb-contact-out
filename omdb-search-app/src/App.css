@@ -1,164 +1,29 @@
+:root {
+  --spacing-unit: 8px;
+  --border-color: #000;
+  --container-width: 1200px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .content-container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 24px 0;
+  padding: calc(3 * var(--spacing-unit)) 0;
 }
 
-.input-movie {
-  margin: 24px;
-  width: 768px;
-  max-width: 320px;
-  padding: 10px;
-}
-
-.one {
-  display: flex;
-  justify-content: space-between;
-}
-
-.one_1,
-.one_2 {
-  flex-grow: 1;
-}
-
-.one_1 {
-  margin-right: 16px;
-}
-
-.new-width {
-  width: 50% !important;
-}
-
-.movie-tile {
-  border: 1px solid #cecece;
-  padding: 16px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.movie-title {
-  padding-right: 8px;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.movie-year {
-  font-style: italic;
-  font-weight: 600;
-}
-
-.nominate-me,
-.prev,
-.next {
+.rounded-button {
   margin-left: auto;
   background: none;
-    border: none;
-    border: 1px solid;
-    padding: 8px;
-    border-radius: 24px;
-    cursor: pointer;
-    width: 100px;
+  border: 1px solid var(--border-color);
+  padding: calc(1 * var(--spacing-unit));
+  border-radius: 24px;
+  cursor: pointer;
+  width: 100px;
 }
 
-.movie-details {
-  display: flex;
-  align-items: center;
-}
 
-.buttons-container {
-  display: flex;
-  justify-content: flex-end;
-  
-}
 
-.buttons-container button {
-  margin-left: unset;
-}
 
-.next {
-  margin-left: 16px !important;
-}
-
-.search-results-title {
-  padding-bottom: 16px;
-    display: flex;
-    font-size: 28px;
-    align-items: center;
-}
-
-.result {
-  padding-left: 16px;
-  font-weight: bold;
-}
-
-.no-nominations {
-  border: 1px solid;
-  padding: 10px;
-}
-
-.banner.success {
-  padding: 16px;
-  border: 1px solid green;
-  box-shadow: 0px 0px 4px;
-  color: green;
-  margin-bottom: 16px;
-}
-
-.banner.danger {
-  padding: 16px;
-  border: 1px solid red;
-  box-shadow: 0px 0px 4px;
-  color: red;
-  margin-bottom: 16px;
-}
-
-.movie-name-input {
-  font-weight: bold;
-}
-
-.error-state {
-  font-weight: bold;
-  text-align: left;
-  font-size: 32px;
-  margin: 16px 0;
-}

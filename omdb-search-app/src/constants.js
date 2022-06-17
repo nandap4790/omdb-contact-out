@@ -1,0 +1,10 @@
+export const NO_RESULTS = "No Results to display for ";
+export const SUCCESS_BANNER = "You can nominate upto 5 movies.";
+export const DANGER_BANNER = "You cannot nominate more than 5 movies.";
+export const SEARCH_RESULTS = "Search results for: ";
+export const MY_NOMINATIONS = "My Nominations";
+export const NO_NOMINATIONS = "No Nominations Yet";
+export const PREVIOUS_BUTTON = "Previous";
+export const NEXT_BUTTON = "Next";
+export const NOMINATE = "Nominate";
+export const REMOVE = "Remove";

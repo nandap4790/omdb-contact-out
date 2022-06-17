@@ -1,0 +1,24 @@
+.movie-tile {
+    border: 1px solid #cecece;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .movie-title {
+    padding-right: 8px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .movie-year {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .movie-details {
+    display: flex;
+    align-items: center;
+  }
+  

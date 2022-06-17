@@ -4,9 +4,11 @@ const initialState = {
     searchResultsText: false,
     totalPages: 0,
     next: false,
+    prev: false,
     moviesList: [],
     inputVal: '',
-    nominatedData: []
+    nominatedData: [],
+    currentPage: 1
 }
 
 const reducer = (state = initialState, action) => {
@@ -36,6 +38,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 next: action.payload
             }
+        case actionType.PREV:
+            return {
+                ...state,
+                prev: action.payload
+            }
         case actionType.INPUT_VAL:
             return {
                 ...state,
@@ -55,6 +62,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 nominatedData: action.payload
+            }
+        case actionType.CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.payload
             }
         default:
             return state

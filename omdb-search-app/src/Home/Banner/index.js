@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const Banner = (props) => {
-    return (
-        <div className={`banner ${props.customClass}`}>
-            {props.message}
-        </div>
-    )
+import './index.css';
+
+export const Banner = ({ customClass="", message="" }) => {
+	return (
+		<div className={`banner ${customClass}`}>
+			{message}
+		</div>
+	)
 }

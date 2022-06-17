@@ -5,7 +5,6 @@ import * as actionType from '../../store/actions';
 import "./index.css";
 
 const SearchInput = (props) => {
-
 	const getData = (e) => {		
 		if(e.keyCode === 13) {
 			props.setSearchResultsText(true);
@@ -31,7 +30,7 @@ const SearchInput = (props) => {
 
 	return (
 		<div>
-			<label for="movie-name-input" class="movie-name-input">Movie Title: </label>
+			<label for="movie-name-input" className="movie-name-input">Movie Title: </label>
         <input 
             className='input-movie'
             placeholder='Enter Movie Title to Nominate'

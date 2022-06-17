@@ -1,0 +1,52 @@
+
+.error-state {
+    font-weight: bold;
+    text-align: left;
+    font-size: 32px;
+    margin: 16px 0;
+  }
+
+  .movie-list-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.movie-list-all,
+.movie-list-nominated {
+  flex-grow: 1;
+}
+
+.movie-list-all {
+  margin-right: 16px;
+}
+
+.search-results-title {
+    padding-bottom: 16px;
+      display: flex;
+      font-size: 28px;
+      align-items: center;
+  }
+
+  .result {
+    padding-left: 16px;
+    font-weight: bold;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+  .buttons-container button {
+    margin-left: unset;
+  }
+
+  .new-width {
+    width: 50% !important;
+  }
+
+  .no-nominations {
+    border: 1px solid;
+    padding: 10px;
+  }
