@@ -14,6 +14,7 @@
 .movie-list-all,
 .movie-list-nominated {
   flex-grow: 1;
+  padding: 16px;
 }
 
 .movie-list-all {
@@ -21,32 +22,53 @@
 }
 
 .search-results-title {
-    padding-bottom: 16px;
-      display: flex;
-      font-size: 28px;
-      align-items: center;
+  padding-bottom: 16px;
+  display: flex;
+  font-size: 28px;
+  align-items: center;
+}
+
+.result {
+  padding-left: 16px;
+  font-weight: bold;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons-container button {
+  margin-left: unset;
+}
+
+.new-width {
+  width: 50% !important;
+}
+
+.no-nominations {
+  border: 1px solid;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .inner {
+    padding: 0 16px;
   }
 
-  .result {
-    padding-left: 16px;
-    font-weight: bold;
+  .movie-list-all,
+  .movie-list-nominated {
+    flex-grow: 1;
+    padding: 16px 0;
   }
 
-  .buttons-container {
-    display: flex;
-    justify-content: flex-end;
-    
+  .movie-list-container {
+    flex-direction: column;
   }
 
-  .buttons-container button {
-    margin-left: unset;
+  .movie-list-all,
+  .movie-list-nominated {
+    width: 100% !important;
+    margin-right: 0;
   }
-
-  .new-width {
-    width: 50% !important;
-  }
-
-  .no-nominations {
-    border: 1px solid;
-    padding: 10px;
-  }
+}

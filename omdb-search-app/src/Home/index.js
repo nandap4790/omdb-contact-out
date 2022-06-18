@@ -55,7 +55,7 @@ const Home = ({ moviesList, nominatedDataFromStorage, nominatedDataList, error, 
 		})
 	}
 
-	return <div className='content-container'>
+	return <div className='content-container inner'>
 		{error && inputVal.length > 0 && <div className="error-state">{NO_RESULTS} "{inputVal}"</div>}
 		{moviesList && moviesList.length > 0 && !danger && <Banner message={SUCCESS_BANNER} customClass="success" />}
 		{danger && <Banner message={DANGER_BANNER} customClass="danger" />}
