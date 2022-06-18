@@ -1,15 +1,19 @@
 .header {
-  background-color: black;
+  --background-color: black;
+
+  background-color: var(--background-color);
 }
 
 .app-title-container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 16px 0;
+  padding: calc(2 * var(--spacing-unit))  0;
 }
 
 .title {
-  color: white;
+  --background-color: white;
+
+  color: var(--background-color);
   text-decoration: none;
   font-weight: bold;
   font-size: 24px;

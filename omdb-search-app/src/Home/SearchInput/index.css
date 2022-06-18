@@ -3,7 +3,7 @@
 }
 
 .input-movie {
-	margin: 24px;
+	margin: calc(3 * var(--spacing-unit));
 	width: 768px;
 	max-width: 320px;
 	padding: 10px;

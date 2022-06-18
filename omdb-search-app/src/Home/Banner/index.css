@@ -1,21 +1,25 @@
 .banner.success { 
-    border: 1px solid green;
-    color: green;
-  }
+  --border-color: green;
 
-  .banner.danger {
-    border: 1px solid red;
-    color: red;
-  }
+  border: 1px solid var(--border-color);
+  color: var(--success-color);
+}
 
+.banner.danger {
+  --border-color: red;
+
+  border: 1px solid var(--border-color);
+  color: var(--danger-color);
+}
+
+.banner {
+  padding: calc(2 * var(--spacing-unit));
+  margin: 0 calc(2 * var(--spacing-unit)) calc(2 * var(--spacing-unit));
+  box-shadow: 0px 0px 4px;
+}
+
+@media only screen and (max-width: 768px) {
   .banner {
-    padding: 16px;
-    margin: 0 16px 16px;
-    box-shadow: 0px 0px 4px;
+    margin: 0 0 calc(2 * var(--spacing-unit));
   }
-
-  @media only screen and (max-width: 768px) {
-    .banner {
-      margin: 0 0 16px;
-    }
-  }
+}

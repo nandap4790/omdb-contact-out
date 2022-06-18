@@ -1,26 +1,28 @@
 .movie-tile {
-    border: 1px solid #cecece;
-    padding: 16px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-  }
+  --border-color: #cecece;
 
-  .movie-title {
-    padding-right: 8px;
-    font-weight: bold;
-    font-size: 18px;
-    text-align: left;
-  }
+  border: 1px solid var(--border-color);
+  padding: calc(2 * var(--spacing-unit));
+  margin-bottom: calc(2 * var(--spacing-unit));
+  display: flex;
+  align-items: center;
+}
 
-  .movie-year {
-    font-style: italic;
-    font-weight: 600;
-  }
+.movie-title {
+  padding-right: var(--spacing-unit);
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+}
 
-  .movie-details {
-    display: flex;
-    align-items: center;
-    margin-right: 8px;
-  }
+.movie-year {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.movie-details {
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-unit);
+}
   

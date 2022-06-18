@@ -2,6 +2,9 @@
   --spacing-unit: 8px;
   --border-color: #000;
   --container-width: 1200px;
+  --success-color: green;
+  --danger-color: red;
+  --background-color: white;
 }
 
 .App {
