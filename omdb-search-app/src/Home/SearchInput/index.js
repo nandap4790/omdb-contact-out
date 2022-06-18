@@ -52,12 +52,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-			fetchData: (data) => dispatch({ type: actionType.MOVIES_LIST, payload: data }),
-			setError: (data) => dispatch({ type: actionType.ERROR, payload: data }),
-			setSearchResultsText: (data) => dispatch({ type: actionType.SEARCH_RESULTS_TEXT, payload: data }),
-			setTotalPages: (data) => dispatch({ type: actionType.TOTAL_PAGES, payload: data }),
-			setNext: (data) => dispatch({ type: actionType.NEXT, payload: data }),
-			setInputVal: (data) => dispatch({ type: actionType.INPUT_VAL, payload: data }),
+		fetchData: (data) => dispatch({ type: actionType.MOVIES_LIST, payload: data }),
+		setError: (data) => dispatch({ type: actionType.ERROR, payload: data }),
+		setSearchResultsText: (data) => dispatch({ type: actionType.SEARCH_RESULTS_TEXT, payload: data }),
+		setTotalPages: (data) => dispatch({ type: actionType.TOTAL_PAGES, payload: data }),
+		setNext: (data) => dispatch({ type: actionType.NEXT, payload: data }),
+		setInputVal: (data) => dispatch({ type: actionType.INPUT_VAL, payload: data }),
 	}
 }
 

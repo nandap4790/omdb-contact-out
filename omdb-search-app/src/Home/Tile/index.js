@@ -16,13 +16,13 @@ const Tile = ({ tileId, nominatedData, item, nominatedDataList, removeNomination
 		}
 
 	}
-	return <div className='movie-tile' key={id}>
+	return item ? <div className='movie-tile' key={id}>
 		<div className="movie-details">
-			<div className='movie-title'>{item.Title}</div>
-			<div className='movie-year'>({item.Year})</div>
+			{item.Title && <div className='movie-title'>{item.Title}</div>}
+			{item.Title && item.Year && <div className='movie-year'>({item.Year})</div>}
 		</div>
 		<button className="rounded-button nominate-me" onClick={eventOnClickFunc} disabled={val || undefined}>{button}</button>
-	</div>
+	</div> : null
 }
 
 const mapStateToProps = state => {
