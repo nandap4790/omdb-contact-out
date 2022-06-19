@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { func, array, bool, string, number } from 'prop-types';
 import { DANGER_BANNER, MY_NOMINATIONS, NEXT_BUTTON, NOMINATE, NO_NOMINATIONS, NO_RESULTS, PREVIOUS_BUTTON, REMOVE, SEARCH_RESULTS, SUCCESS_BANNER } from '../constants';
 
 import * as actionType from '../store/actions';
@@ -92,7 +93,6 @@ const mapStateToProps = state => {
 		moviesList: state.moviesList,
 		error: state.error,
 		inputVal: state.inputVal,
-		totalPages: state.totalPages,
 		searchResultsText: state.searchResultsText,
 		next: state.next,
 		prev: state.prev,
@@ -103,11 +103,20 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		fetchData: (data) => dispatch({ type: actionType.MOVIES_LIST, payload: data }),
-		setNext: (data) => dispatch({ type: actionType.NEXT, payload: data }),
-		nominatedData: (data) => dispatch({ type: actionType.NOMINATED_DATA, payload: data }),
 		nominatedDataFromStorage: (data) => dispatch({ type: actionType.NOMINATED_DATA_FROM_STORAGE, payload: data }),
 	}
+}
+
+Home.propTypes = {
+	nominatedDataFromStorage: func,
+	moviesList: array,
+	error: bool,
+	inputVal: string,
+	searchResultsText: string,
+	next: bool,
+	prev: bool,
+	nominatedDataList: array,
+	currentPageNumber: number
 }
 
 export default connect(

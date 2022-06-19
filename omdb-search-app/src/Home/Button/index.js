@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { string, bool, number, func } from 'prop-types';
 import * as actionType from '../../store/actions';
 
 import "./index.css";
@@ -53,11 +54,21 @@ const mapDispatchToProps = dispatch => {
 	return {
 		fetchData: (data) => dispatch({ type: actionType.MOVIES_LIST, payload: data }),
 		setNext: (data) => dispatch({ type: actionType.NEXT, payload: data }),
-		nominatedData: (data) => dispatch({ type: actionType.NOMINATED_DATA, payload: data }),
-		nominatedDataFromStorage: (data) => dispatch({ type: actionType.NOMINATED_DATA_FROM_STORAGE, payload: data }),
 		currentPage: (data) => dispatch({ type: actionType.CURRENT_PAGE, payload: data }),
 		setPrev: (data) => dispatch({ type: actionType.PREV, payload: data }),
 	}
+}
+
+Button.propTypes = {
+	customClass: string,
+	setPrev: func,
+	currentPage: func,
+	currentPageNumber: number,
+	inputVal: string,
+	totalPages: number,
+	setNext: func,
+	fetchData: func,
+	content: string
 }
 
 export default connect(

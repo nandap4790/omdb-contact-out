@@ -1,27 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actionType from '../../store/actions';
+import { string, func } from 'prop-types';
 
 import "./index.css";
 
-const SearchInput = (props) => {
+const SearchInput = ({setSearchResultsText, inputVal, setError, setTotalPages, fetchData, setNext, setInputVal}) => {
 	const getData = (e) => {		
 		if(e.keyCode === 13) {
-			props.setSearchResultsText(true);
-			fetch(`http://www.omdbapi.com/?s=${props.inputVal}&type=movie&apikey=265a831e&page=1`)
+			setSearchResultsText(true);
+			fetch(`http://www.omdbapi.com/?s=${inputVal}&type=movie&apikey=265a831e&page=1`)
 			.then(response => response.json())
 			.then(data => {
 				const errorResponse = data.Response === 'False' || data.Error === 'Too many results.';
 				if(errorResponse) {
-					props.setError(true);
+					setError(true);
 				} else {
 					const pages = Math.ceil(data.totalResults/10);
-					props.setError(false);
-					props.setTotalPages(pages);
-					props.fetchData(data.Search);
+					setError(false);
+					setTotalPages(pages);
+					fetchData(data.Search);
 
 					if(pages > 1) {
-						props.setNext(true);
+						setNext(true);
 					}
 				}
 			});
@@ -34,8 +35,8 @@ const SearchInput = (props) => {
         <input 
             className='input-movie'
             placeholder='Enter Movie Title to Nominate'
-            val={props.inputVal}
-            onChange={(e) => props.setInputVal(e.target.value)}
+            val={inputVal}
+            onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={getData}
             id="movie-name-input"
         />
@@ -59,6 +60,16 @@ const mapDispatchToProps = dispatch => {
 		setNext: (data) => dispatch({ type: actionType.NEXT, payload: data }),
 		setInputVal: (data) => dispatch({ type: actionType.INPUT_VAL, payload: data }),
 	}
+}
+
+Button.propTypes = {
+	inputVal: string,
+	setNext: func,
+	fetchData: func,
+	setError: func,
+	setSearchResultsText: func,
+	setTotalPages: func,
+	setInputVal: func
 }
 
 

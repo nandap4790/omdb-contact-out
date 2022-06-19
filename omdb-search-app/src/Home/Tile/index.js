@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actionType from '../../store/actions';
+import { func, string, object, array, number, bool } from 'prop-types';
 
 import './index.css';
 
@@ -36,6 +37,17 @@ const mapDispatchToProps = dispatch => {
 		nominatedData: (data) => dispatch({ type: actionType.NOMINATED_DATA, payload: data }),
 		removeNomination: (data) => dispatch({ type: actionType.REMOVE_NOMINATED_DATA, payload: data })
 	}
+}
+
+Tile.propTypes = {
+	nominatedData: func,
+	removeNomination: func,
+	tileId: string,
+	item: object,
+	nominatedDataList: array,
+	id: number,
+	val: bool,
+	button: string
 }
 
 export default connect(
