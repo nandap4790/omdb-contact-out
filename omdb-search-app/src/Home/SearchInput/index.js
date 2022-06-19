@@ -15,6 +15,7 @@ const SearchInput = ({setSearchResultsText, inputVal, setError, setTotalPages, f
 				const errorResponse = data.Response === 'False' || data.Error === 'Too many results.';
 				if(errorResponse) {
 					setError(true);
+					fetchData([]);
 				} else {
 					const pages = Math.ceil(data.totalResults/10);
 					setError(false);
