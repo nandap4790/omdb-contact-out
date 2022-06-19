@@ -8,7 +8,7 @@ The selection is stored in the local storage.
 
 # How to start the app
 
-To begin the app, please run: `npm start`
+To begin the app, please run: `npm install && npm start`
 
 # Run tests
 
