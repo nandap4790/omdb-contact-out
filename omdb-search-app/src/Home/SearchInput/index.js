@@ -32,14 +32,14 @@ const SearchInput = ({setSearchResultsText, inputVal, setError, setTotalPages, f
 	return (
 		<div>
 			<label for="movie-name-input" className="movie-name-input">Movie Title: </label>
-        <input 
-            className='input-movie'
-            placeholder='Enter Movie Title to Nominate'
-            val={inputVal}
-            onChange={(e) => setInputVal(e.target.value)}
-            onKeyDown={getData}
-            id="movie-name-input"
-        />
+			<input 
+				className='input-movie'
+				placeholder='Enter Movie Title to Nominate'
+				val={inputVal}
+				onChange={(e) => setInputVal(e.target.value)}
+				onKeyDown={getData}
+				id="movie-name-input"
+			/>
 		</div>
 	)
 }
@@ -62,7 +62,7 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-Button.propTypes = {
+SearchInput.propTypes = {
 	inputVal: string,
 	setNext: func,
 	fetchData: func,
